@@ -9,7 +9,7 @@ function Login() {
          <title className='Title'>Bienvenido</title>
         <h1 className='Description'>Lo mejor de la sasón, está en el sabor</h1>
         <div className="Cajas">
-        <form class="Form">
+        <form className="Form">
             <div className="col-auto">
             <label for="user" class="visually-hidden">User</label>
             <input type="text" class="form-control form-control-lgl" id="" placeholder="Usuario"/>

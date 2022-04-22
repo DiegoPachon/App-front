@@ -17,9 +17,9 @@ function Inicio() {
             <h4>USUARIOS</h4>
         </div>
         <div className="box">
-        <i class="lni lni-dinner"></i>
-            <h5>PLATOS</h5>
-            <h4>PLATOS</h4>
+        <i class="lni lni-library"></i>
+            <h5>MENU</h5>
+            <h4>MENU</h4>
         </div>
         <div className="box">
         <i class="lni lni-revenue"></i>
