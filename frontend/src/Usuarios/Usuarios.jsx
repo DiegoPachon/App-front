@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table, Button, Container, Modal, ModalBody, ModalHeader, FormGroup, ModalFooter } from 'react-bootstrap';
+import { Table, Button, Container} from 'react-bootstrap';
 import './Usuarios.css';
 
 const data = [

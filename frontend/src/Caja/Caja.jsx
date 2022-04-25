@@ -7,14 +7,32 @@ function Caja() {
   return (
 
     <div className="Caja">
-    <div id="recibo"></div>
+    <div id="recibo">
+     <h2>Empresa S.A.S</h2>
+     <h5>Dirección </h5> 
+     <h5>NIT </h5> 
+     <hr />
+     <h3>Factura de venta:</h3>
+     <h5>Fecha: </h5>
+     <h5>Cliente: </h5>
+     <hr />
+     <tr>
+       <td>Cant.</td>
+       <td>Descripción</td>
+       <td>Valor</td>
+     </tr> 
+     <hr />
+     <h5>TOTAL </h5> 
+     <button type="submit" class="btn btn-success ">PAGAR</button>
+    </div>
     <div id= "botones"> 
-    <hr />
-    <button type="submit" class="btn btn-info">Platos</button>
-    <hr />
-    <button type="submit" class="btn btn-info">Bebidas</button>
-    <hr />
-    <button type="submit" class="btn btn-info">Postres</button>
+    <h5>Seleccione una opción </h5>
+    <div id="Espacio"></div>
+    <button type="submit" class="btn btn-warning">Platos</button>
+    <div id="Espacio"></div>
+    <button type="submit" class="btn btn-warning">Bebidas</button>
+    <div id="Espacio"></div>
+    <button type="submit" class="btn btn-warning" >Postres</button>
     
     </div>
     <div id="productos"></div>

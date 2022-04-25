@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table, Button, Container, Modal, ModalBody, ModalHeader, FormGroup, ModalFooter } from 'react-bootstrap';
+import { Table, Container} from 'react-bootstrap';
 import './Menu.css';
 
 const data = [
@@ -28,6 +28,7 @@ class Platos extends React.Component {
                         <thead><tr><th>Id</th>
                             <th>Nombre</th>
                             <th>Costo</th>
+                            <th>Imagen</th>
                             <th>Acciones</th>
                         </tr></thead>
                         <tbody>
@@ -36,9 +37,10 @@ class Platos extends React.Component {
                                     <td>{elemento.id}</td>
                                     <td>{elemento.nombre}</td>
                                     <td>{elemento.costo}</td>
+                                    <td>{elemento.imagen}</td>
                                     <td>
-                                        <Button color="primary">Editar</Button>{" "}
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" class="btn btn-primary">Editar</button>{" "}
+                                        <button type="button" class="btn btn-danger">Eliminar</button>
                                     </td>
                                 </tr>
                             ))}
