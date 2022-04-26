@@ -6,7 +6,7 @@ function Login() {
   return (
 
     <div className="Login">
-         <title className='Title'>Bienvenido</title>
+        <title className='Title'>Bienvenido</title>
         <h1 className='Description'>Lo mejor de la sasón, está en el sabor</h1>
         <div className="Cajas">
         <form className="Form">

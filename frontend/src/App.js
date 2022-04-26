@@ -7,6 +7,7 @@ import Menu from './Menu/Menu';
 import Usuarios from './Usuarios/Usuarios';
 import Caja from './Caja/Caja';
 import CrearUsuario from './Usuarios/CrearUsuario'
+import CrearProducto from './Menu/CrearProducto';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="usuarios" element={<Usuarios />} />
         <Route path="caja" element={<Caja />} />
         <Route path="crearusuario" element={<CrearUsuario />} />
+        <Route path="crearproducto" element={<CrearProducto />} />
       </Routes>
     </div>
 

@@ -43,6 +43,8 @@ z-index: 1;
 .box i{
 font-size: 60px;
 color: #0099E9;
+align-items: center;
+margin-top: 40px;
 }
 
 .box:hover i{
@@ -50,9 +52,11 @@ color: #fff;
 }
 
 .box h5{
-margin-top: 20px;
 font-size: 14px;
-color: #777777;
+color: #090909;
+position: absolute;
+bottom: 50px;
+
 }
 
 .box:hover h5{

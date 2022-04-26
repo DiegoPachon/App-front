@@ -4,12 +4,12 @@ import { Table, Container} from 'react-bootstrap';
 import './Menu.css';
 
 const data = [
-    { id: 1, nombre: "Carne asada", costo: "15000" },
-    { id: 2, nombre: "Pechuga a la plancha", costo: "17000" },
-    { id: 3, nombre: "Sopa", costo: "10000" },
-    { id: 4, nombre: "Agua", costo: "5000" },
-    { id: 5, nombre: "Gaseosa", costo: "5000" },
-    { id: 6, nombre: "Cerveza", costo: "10000" },
+    { id: 1, nombre: "Carne asada", precio: "15000" },
+    { id: 2, nombre: "Pechuga a la plancha", precio: "17000" },
+    { id: 3, nombre: "Sopa", precio: "10000" },
+    { id: 4, nombre: "Agua", precio: "5000" },
+    { id: 5, nombre: "Gaseosa", precio: "5000" },
+    { id: 6, nombre: "Cerveza", precio: "10000" },
 ];
 
 class Platos extends React.Component {
@@ -27,7 +27,7 @@ class Platos extends React.Component {
                     <Table>
                         <thead><tr><th>Id</th>
                             <th>Nombre</th>
-                            <th>Costo</th>
+                            <th>Precio</th>
                             <th>Imagen</th>
                             <th>Acciones</th>
                         </tr></thead>
@@ -36,7 +36,7 @@ class Platos extends React.Component {
                                 <tr>
                                     <td>{elemento.id}</td>
                                     <td>{elemento.nombre}</td>
-                                    <td>{elemento.costo}</td>
+                                    <td>{elemento.precio}</td>
                                     <td>{elemento.imagen}</td>
                                     <td>
                                         <button type="button" class="btn btn-primary">Editar</button>{" "}
