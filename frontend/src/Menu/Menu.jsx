@@ -22,7 +22,7 @@ class Platos extends React.Component {
             <>
                 <Container>
                     <br />
-                    <button type="submit" class="btn btn-success">Insertar</button>
+                    <button type="submit" class="btn btn-success">Insertar Producto</button>
                     <br />
                     <Table>
                         <thead><tr><th>Id</th>

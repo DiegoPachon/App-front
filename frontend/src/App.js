@@ -6,6 +6,7 @@ import Inicio from './Inicio/Inicio';
 import Menu from './Menu/Menu';
 import Usuarios from './Usuarios/Usuarios';
 import Caja from './Caja/Caja';
+import CrearUsuario from './Usuarios/CrearUsuario'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="menu" element={<Menu />} />
         <Route path="usuarios" element={<Usuarios />} />
         <Route path="caja" element={<Caja />} />
+        <Route path="crearusuario" element={<CrearUsuario />} />
       </Routes>
     </div>
 

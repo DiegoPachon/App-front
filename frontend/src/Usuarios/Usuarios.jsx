@@ -4,9 +4,9 @@ import { Table, Button, Container} from 'react-bootstrap';
 import './Usuarios.css';
 
 const data = [
-    { id: 1, nombre: "Diego", contraseña: "123" },
-    { id: 2, nombre: "Sebastian", contraseña: "456" },
-    { id: 3, nombre: "Leonardo", contraseña: "789" },
+    { id: 1, nombre: "Diego", email:"diego@hotmail.com", contraseña: "123" },
+    { id: 2, nombre: "Sebastian",email:"sebastian@hotmail.com", contraseña: "456" },
+    { id: 3, nombre: "Leonardo",email:"leonardo@hotmail.com", contraseña: "789" },
 ];
 
 class Usuarios extends React.Component {
@@ -19,11 +19,13 @@ class Usuarios extends React.Component {
             <>
                 <Container>
                     <br />
-                    <button type="submit" class="btn btn-success">Insertar</button>
+                    <button type="submit" class="btn btn-success">Crear Usuario</button>
                     <br />
-                    <Table>
-                        <thead><tr><th>Id</th>
+                    <Table >
+                        <thead><tr>
+                            <th>Id</th>
                             <th>Nombre</th>
+                            <th>Email</th>
                             <th>Contaseña</th>
                             <th>Acciones</th>
                         </tr></thead>
@@ -32,6 +34,7 @@ class Usuarios extends React.Component {
                                 <tr>
                                     <td>{elemento.id}</td>
                                     <td>{elemento.nombre}</td>
+                                    <td>{elemento.email}</td>
                                     <td>{elemento.contraseña}</td>
                                     <td>
                                         <Button color="primary">Editar</Button>{" "}
