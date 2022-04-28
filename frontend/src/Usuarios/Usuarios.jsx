@@ -19,7 +19,7 @@ class Usuarios extends React.Component {
             <>
                 <Container>
                     <br />
-                    <button type="submit" class="btn btn-success">Crear Usuario</button>
+                    <button type="submit" className="btn btn-success">Crear Usuario</button>
                     <br />
                     <Table >
                         <thead><tr>
@@ -38,7 +38,7 @@ class Usuarios extends React.Component {
                                     <td>{elemento.contraseña}</td>
                                     <td>
                                         <Button color="primary">Editar</Button>{" "}
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        <button type="submit" className="btn btn-danger">Eliminar</button>
                                          
                                     </td>
                                 </tr>

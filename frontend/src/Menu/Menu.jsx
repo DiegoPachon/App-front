@@ -22,7 +22,7 @@ class Platos extends React.Component {
             <>
                 <Container>
                     <br />
-                    <button type="submit" class="btn btn-success">Insertar Producto</button>
+                    <button type="submit" className="btn btn-success">Insertar Producto</button>
                     <br />
                     <Table>
                         <thead><tr><th>Id</th>
@@ -39,8 +39,8 @@ class Platos extends React.Component {
                                     <td>{elemento.precio}</td>
                                     <td>{elemento.imagen}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary">Editar</button>{" "}
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" className="btn btn-primary">Editar</button>{" "}
+                                        <button type="button" className="btn btn-danger">Eliminar</button>
                                     </td>
                                 </tr>
                             ))}

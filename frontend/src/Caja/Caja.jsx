@@ -23,16 +23,16 @@ function Caja() {
      </tr> 
      <hr />
      <h5>TOTAL </h5> 
-     <button type="submit" class="btn btn-success ">PAGAR</button>
+     <button type="submit" className="btn btn-success ">PAGAR</button>
     </div>
     <div id= "botones"> 
     <h5>Seleccione una opción </h5>
     <div id="Espacio"></div>
-    <button type="submit" class="btn btn-warning">Platos</button>
+    <button type="submit" className="btn btn-warning">Platos</button>
     <div id="Espacio"></div>
-    <button type="submit" class="btn btn-warning">Bebidas</button>
+    <button type="submit" className="btn btn-warning">Bebidas</button>
     <div id="Espacio"></div>
-    <button type="submit" class="btn btn-warning" >Postres</button>
+    <button type="submit" className="btn btn-warning" >Postres</button>
     
     </div>
     <div id="productos"></div>

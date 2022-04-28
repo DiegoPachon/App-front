@@ -10,18 +10,18 @@ function CrearUsuario() {
        <div className="title">Nuevo Usuario</div>
        <div id="Espacio"></div>
           <div className="forma">
-          <label for="user" class="visually-hidden">Nombre</label>
-          <input type="text" class="form-control form-control-lgl" id="" placeholder="Nombre"/>
+          <label for="user" className="visually-hidden">Nombre</label>
+          <input type="text" className="form-control form-control-lgl" id="" placeholder="Nombre"/>
           </div>
           <div id="Espacio"></div>
           <div className="forma">
-          <label for="user" class="visually-hidden">Email</label>
-          <input type="text" class="form-control form-control-lgl" id="" placeholder="Correo"/>
+          <label for="user" className="visually-hidden">Email</label>
+          <input type="text" className="form-control form-control-lgl" id="" placeholder="Correo"/>
           </div>
           <div id="Espacio"></div>
           <div className="forma">
-          <label for="user" class="visually-hidden">Contraseña</label>
-          <input type="text" class="form-control form-control-lgl" id="" placeholder="Contraseña"/>
+          <label for="user" className="visually-hidden">Contraseña</label>
+          <input type="text" className="form-control form-control-lgl" id="" placeholder="Contraseña"/>
           </div>
           <div id="Espacio"></div>
           <div className="forma">

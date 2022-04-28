@@ -9,13 +9,13 @@ function CrearProducto() {
        <div className="title">Nuevo Producto</div>
        <div id="Espacio"></div>
           <div className="forma">
-          <label for="user" class="visually-hidden">Nombre</label>
-          <input type="text" class="form-control form-control-lgl" id="" placeholder="Nombre"/>
+          <label for="user" className="visually-hidden">Nombre</label>
+          <input type="text" className="form-control form-control-lgl" id="" placeholder="Nombre"/>
           </div>
           <div id="Espacio"></div>
           <div className="forma">
-          <label for="user" class="visually-hidden">Precio</label>
-          <input type="text" class="form-control form-control-lgl" id="" placeholder="Precio"/>
+          <label for="user" className="visually-hidden">Precio</label>
+          <input type="text" className="form-control form-control-lgl" id="" placeholder="Precio"/>
           </div>
           <div id="Espacio"></div>
           <div className="forma">

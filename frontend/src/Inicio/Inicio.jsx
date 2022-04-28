@@ -12,22 +12,22 @@ function Inicio() {
     <div className='Container_Box'>
 
         <div className="box">
-        <i class="lni lni-consulting"></i>
+        <i className="lni lni-consulting"></i>
             <h5>USUARIOS</h5>
             <h4>USUARIOS</h4>
         </div>
         <div className="box">
-        <i class="lni lni-library"></i>
+        <i className="lni lni-library"></i>
             <h5>MENU</h5>
             <h4>MENU</h4>
         </div>
         <div className="box">
-        <i class="lni lni-revenue"></i>
+        <i className="lni lni-revenue"></i>
             <h5>CAJA</h5>
             <h4>CAJA</h4>
         </div>
         <div className="box">
-        <i class="lni lni-invest-monitor"></i>
+        <i className="lni lni-invest-monitor"></i>
             <h5>VENTAS</h5>
             <h4>VENTAS</h4>
         </div>

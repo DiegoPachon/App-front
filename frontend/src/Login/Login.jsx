@@ -1,71 +1,71 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import './Login.css';
+import React from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios"
+import "./Login.css";
 
+const Example = () => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
-function Login() {
-
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);// caracteristicas que solo puenden ser alteradas por este componente
-  //muestra los mensajes de error, respuesta del back
-  const renderErrorMessage = (name) =>
-  name === errorMessages.name && (
-    <div className="error">{errorMessages.message}</div>
-  );
-  // método de activacion al oprimir iniciar sesión
-  const handleSubmit = (event) => {
-    // Recarga de pagina
-    console.log("Boton");
-    let { email, password } = document.forms[0];
-    console.log(password.value);
-    console.log(email.value);
-    const headers = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      }
-     axios({
-      method: 'post',
-      url:"http://localhost:3001/login",
-      data:{
-        email: email.value,
-        password: password.value
-      },
-      headers:headers
-     }
-    ).then((response)=> {
-      console.log(response.data);
-      event.preventDefault();
-    })
-
-   // event.preventDefault();
+  const onSubmit = (values) => {
+    const URLBackend = "http://localhost:3000"
+    axios.post(`${URLBackend}/login`, {
+      email: values.email,
+      password: values.password
+    }).then((response) => {
+      console.log(response);
+      console.log(values);
+    }).catch((res) => {
+      console.log(res.response.data)
+    });
   };
 
-
   return (
-
     <div className="Login">
-        <title className='Title'>Bienvenido</title>
-        <h1 className='Description'>Lo mejor de la sasón, está en el sabor</h1>
-        <div className="Cajas">
-        <form className="Form" onSubmit={handleSubmit}>
-            <div className="col-auto">
-            <label htmlFor="user" className="visually-hidden">User</label>
-            <input type="text" className="form-control form-control-lgl" name="email" placeholder="Usuario"/>
-            </div>
-            <hr />
-            <div className="col-auto">
-            <label htmlFor="password" className="visually-hidden">Password</label>
-            <input type="password" className="form-control" name="password" placeholder="Contraseña"/>
-            </div>
-            <hr />
-            <div className="col-auto">
-            <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
-            </div>  
+      <title className="Title">Bienvenido</title>
+      <h1 className="Description">Lo mejor de la sasón, está en el sabor</h1>
+      <div className="Cajas">
+        <form className="Form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="col-auto">
+            <label htmlFor="user" className="visually-hidden">
+              User
+            </label>
+            <input
+              type="email"
+              className="form-control form-control-lgl"
+              placeholder="Email"
+              {...register("email", {
+                required: "Required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address",
+                },
+              })}
+            />
+          </div>
+          {errors.email && errors.email.message}
+          <hr />{" "}
+          <label htmlFor="password" className="visually-hidden">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Contraseña"
+            {...register("password", {
+              required: "Required",
+            })}
+          />
+          <hr />{" "}
+          {errors.username && errors.username.message}
+          <button type="submit">Submit</button>
         </form>
-        </div>
+      </div>
     </div>
-    
   );
-}
+};
 
-export default Login;
+export default Example;

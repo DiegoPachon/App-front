@@ -1,13 +1,13 @@
-import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
-import './App.css';
-import Login from './login/Login'; 
-import Inicio from './inicio/Inicio';
-import Menu from './menu/Menu';
-import Usuarios from './usuarios/Usuarios';
-import Caja from './caja/Caja';
-import CrearUsuario from './usuarios/CrearUsuario'
-import CrearProducto from './menu/CrearProducto';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Login from "./Login/Login";
+import Inicio from "./Inicio/Inicio";
+import Menu from "./Menu/Menu";
+import Usuarios from "./Usuarios/Usuarios";
+import Caja from "./Caja/Caja";
+import CrearUsuario from "./Usuarios/CrearUsuario";
+import CrearProducto from "./Menu/CrearProducto";
 
 function App() {
   return (
@@ -22,8 +22,6 @@ function App() {
         <Route path="crearproducto" element={<CrearProducto />} />
       </Routes>
     </div>
-
-    
   );
 }
 
