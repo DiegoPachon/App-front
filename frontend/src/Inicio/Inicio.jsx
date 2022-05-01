@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Inicio.css";
 
 const Inicio = () => {
@@ -10,26 +11,26 @@ const Inicio = () => {
       ></link>
       <main>
         <div className="Container_Box">
-          <div className="box">
+          <NavLink to="usuarios" className="box">
             <i className="lni lni-consulting"></i>
             <h5>USUARIOS</h5>
             <h4>USUARIOS</h4>
-          </div>
-          <div className="box">
+          </NavLink>
+          <NavLink to="menu" className="box">
             <i className="lni lni-library"></i>
             <h5>MENU</h5>
             <h4>MENU</h4>
-          </div>
-          <div className="box">
+          </NavLink>
+          <NavLink to="caja" className="box">
             <i className="lni lni-revenue"></i>
             <h5>CAJA</h5>
             <h4>CAJA</h4>
-          </div>
-          <div className="box">
+          </NavLink>
+          <NavLink to="/" className="box">
             <i className="lni lni-invest-monitor"></i>
             <h5>VENTAS</h5>
             <h4>VENTAS</h4>
-          </div>
+          </NavLink>
         </div>
       </main>
     </div>
