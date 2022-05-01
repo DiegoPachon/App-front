@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios"
+import axios from "axios";
 import "./Login.css";
 
-const Example = () => {
+const Login = () => {
   const {
     handleSubmit,
     register,
@@ -11,16 +11,19 @@ const Example = () => {
   } = useForm();
 
   const onSubmit = (values) => {
-    const URLBackend = "http://localhost:3000"
-    axios.post(`${URLBackend}/login`, {
-      email: values.email,
-      password: values.password
-    }).then((response) => {
-      console.log(response);
-      console.log(values);
-    }).catch((res) => {
-      console.log(res.response.data)
-    });
+    const URLBackend = "http://localhost:3000";
+    axios
+      .post(`${URLBackend}/login`, {
+        email: values.email,
+        password: values.password,
+      })
+      .then((response) => {
+        console.log(response);
+        console.log(values);
+      })
+      .catch((res) => {
+        console.log(res.response.data);
+      });
   };
 
   return (
@@ -59,8 +62,7 @@ const Example = () => {
               required: "Required",
             })}
           />
-          <hr />{" "}
-          {errors.username && errors.username.message}
+          <hr /> {errors.username && errors.username.message}
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -68,4 +70,4 @@ const Example = () => {
   );
 };
 
-export default Example;
+export default Login;

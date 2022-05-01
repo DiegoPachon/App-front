@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Login from "./Login/Login";
 import Inicio from "./Inicio/Inicio";
@@ -9,7 +9,7 @@ import Caja from "./Caja/Caja";
 import CrearUsuario from "./Usuarios/CrearUsuario";
 import CrearProducto from "./Menu/CrearProducto";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Routes>
@@ -23,6 +23,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
