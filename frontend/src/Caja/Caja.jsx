@@ -1,9 +1,12 @@
 import React from "react";
+import { useAuth } from "../Auth/Auth";
 import "./Caja.css";
 
 const Caja = () => {
+  const { token } = useAuth();
   return (
     <div className="Caja">
+      {token && <>Authenticated as {token}</>}
       <div id="recibo">
         <h2>Empresa S.A.S</h2>
         <h5>Dirección </h5>
@@ -13,11 +16,16 @@ const Caja = () => {
         <h5>Fecha: </h5>
         <h5>Cliente: </h5>
         <hr />
-        <tr>
-          <td>Cant.</td>
-          <td>Descripción</td>
-          <td>Valor</td>
-        </tr>
+        <table>
+          <tbody>
+            <tr>
+              <td>Cant.</td>
+              <td>Descripción</td>
+              <td>Valor</td>
+            </tr>
+          </tbody>
+        </table>
+
         <hr />
         <h5>TOTAL </h5>
         <button type="submit" className="btn btn-success ">

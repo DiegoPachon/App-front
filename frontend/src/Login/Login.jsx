@@ -1,37 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { useAuth } from "../Auth/Auth";
 import "./Login.css";
 
 const Login = () => {
+  const { onLogin } = useAuth();
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (values) => {
-    const URLBackend = "http://localhost:3000";
-    axios
-      .post(`${URLBackend}/login`, {
-        email: values.email,
-        password: values.password,
-      })
-      .then((response) => {
-        console.log(response);
-        console.log(values);
-      })
-      .catch((res) => {
-        console.log(res.response.data);
-      });
-  };
-
   return (
     <div className="Login">
       <title className="Title">Bienvenido</title>
       <h1 className="Description">Lo mejor de la sasón, está en el sabor</h1>
       <div className="Cajas">
-        <form className="Form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="Form" onSubmit={handleSubmit(onLogin)}>
           <div className="col-auto">
             <label htmlFor="user" className="visually-hidden">
               User

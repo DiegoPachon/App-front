@@ -35,7 +35,7 @@ const Menu = () => {
           </thead>
           <tbody>
             {platos.map((elemento) => (
-              <tr>
+              <tr key={elemento.id}>
                 <td>{elemento.id}</td>
                 <td>{elemento.nombre}</td>
                 <td>{elemento.precio}</td>

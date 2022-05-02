@@ -1,10 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Inicio.css";
+import "./Navigation.css";
+import { useAuth } from "../Auth/Auth";
 
-const Inicio = () => {
+const Navigation = () => {
+  const { token, onLogout } = useAuth();
   return (
     <div className="Inicio">
+      {token && (
+        <>
+          <h3>Autenticado</h3>
+          <button type="button" onClick={onLogout}>
+            Sign Out
+          </button>
+        </>
+      )}
       <link
         href="https://cdn.lineicons.com/3.0/lineicons.css"
         rel="stylesheet"
@@ -37,4 +47,4 @@ const Inicio = () => {
   );
 };
 
-export default Inicio;
+export default Navigation;
