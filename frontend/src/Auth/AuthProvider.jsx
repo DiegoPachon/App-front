@@ -10,8 +10,7 @@ const AuthProvider = ({ children }) => {
 
   const handleLogin = async (values) => {
     const response = await Authentication(values.email, values.password);
-    if (response.error) {
-    } else {
+    if (!response.error) {
       const { user } = response;
       setToken(user.token);
 

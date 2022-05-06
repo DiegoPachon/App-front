@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Navigation.css";
+import "./Header.css";
 import { useAuth } from "../Auth/Auth";
 
-const Navigation = () => {
+const Header = () => {
   const { token, onLogout } = useAuth();
   return (
     <div className="Inicio">
@@ -47,4 +47,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Header;
