@@ -1,37 +1,23 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { useAuth } from "../auth/Auth";
 import "./Login.css";
 
-const Example = () => {
+const Login = () => {
+  const { onLogin } = useAuth();
+
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (values) => {
-    const URLBackend = "http://localhost:3001";
-    axios
-      .post(`${URLBackend}/login`, {
-        email: values.email,
-        password: values.password,
-      })
-      .then((response) => {
-        console.log(response);
-        console.log(values);
-      })
-      .catch((res) => {
-        console.log(res.response.data);
-      });
-  };
-
   return (
     <div className="Login">
       <title className="Title">Bienvenido</title>
       <h1 className="Description">Lo mejor de la sasón, está en el sabor</h1>
       <div className="Cajas">
-        <form className="Form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="Form" onSubmit={handleSubmit(onLogin)}>
           <div className="col-auto">
             <label htmlFor="user" className="visually-hidden">
               User
@@ -63,13 +49,11 @@ const Example = () => {
             })}
           />
           <hr /> {errors.username && errors.username.message}
-          <button type="submit" className="btn btn-success">
-            Iniciar sesión
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default Example;
+export default Login;
