@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "../auth/Auth";
+import { useAuth } from "../Auth/Auth";
 import "./Caja.css";
 
 const Caja = () => {

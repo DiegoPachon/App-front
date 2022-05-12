@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./login/Login";
-import Header from "./header";
+import Header from "./Header/index";
 import Menu from "./menu/Menu";
 import Usuarios from "./usuarios/Usuarios";
 import Caja from "./caja/Caja";
 import CrearUsuario from "./usuarios/CrearUsuario";
 import CrearProducto from "./menu/CrearProducto";
-import AuthProvider from "./auth/AuthProvider";
-import ProtectedRoute from "./auth/ProtectedRoute";
+import AuthProvider from "./Auth/AuthProvider";
+import ProtectedRoute from "./Auth/ProtectedRoute";
 
 const App = () => {
   return (
@@ -37,6 +37,7 @@ const App = () => {
           />
           <Route path="crearusuario" element={<CrearUsuario />} />
           <Route path="crearproducto" element={<CrearProducto />} />
+          <Route path="caja" element={<Caja />} />
         </Routes>
       </div>
     </AuthProvider>

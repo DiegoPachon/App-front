@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import { useAuth } from "../auth/Auth";
+import { useAuth } from "../Auth/Auth";
 
 const Header = () => {
   const { token, onLogout } = useAuth();
@@ -38,8 +38,8 @@ const Header = () => {
           </NavLink>
           <NavLink to="/" className="box">
             <i className="lni lni-invest-monitor"></i>
-            <h5>VENTAS</h5>
-            <h4>VENTAS</h4>
+            <h5>REPORTES</h5>
+            <h4>REPORTES</h4>
           </NavLink>
         </div>
       </main>

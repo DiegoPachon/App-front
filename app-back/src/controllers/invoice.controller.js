@@ -1,6 +1,7 @@
 const { InvoiceServices } = require("../services");
 
 const createInvoice = async (req, res) => {
+  console.log(req.body);
   try {
     const { total, tip, products } = req.body;
 
@@ -9,6 +10,7 @@ const createInvoice = async (req, res) => {
         ok: false,
         error: "All fields are required",
       });
+      return;
     }
 
     const invoice = await InvoiceServices.createInvoice(req.body);
@@ -19,6 +21,7 @@ const createInvoice = async (req, res) => {
       message: "Invoice created successfully",
       invoice,
     });
+    return;
   } catch (err) {
     res.status(400).json({ ok: false, error: err.message });
   }
@@ -32,6 +35,7 @@ const getInvoices = async (req, res) => {
         ok: false,
         error: "All fields are required",
       });
+      return;
     }
 
     const invoices = await InvoiceServices.getInvoices(offset, limit);

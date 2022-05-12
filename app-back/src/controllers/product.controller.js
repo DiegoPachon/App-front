@@ -2,6 +2,8 @@ const { ProductServices } = require("../services");
 
 const createProduct = async (req, res) => {
   try {
+    console.log(req.file);
+    console.log(req.body);
     const { name, price } = req.body;
     const image = req.file;
 

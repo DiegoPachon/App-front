@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../auth/Auth";
+import { useAuth } from "../Auth/Auth";
 import "./Login.css";
 
 const Login = () => {
@@ -49,7 +49,9 @@ const Login = () => {
             })}
           />
           <hr /> {errors.username && errors.username.message}
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn btn-success">
+            Submit
+          </button>
         </form>
       </div>
     </div>
