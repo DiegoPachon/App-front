@@ -2,17 +2,24 @@ const Product = require("../models/Product.model");
 const cloudinary = require("../config/cloudinary");
 const { ValidationError } = require("sequelize");
 
-const createProduct = async (name, price, image) => {
+const createProduct = async (name, price, image, category, description) => {
   const cloudinary_image = await cloudinary.uploader.upload(image.path, {
-    folder: "/menu/platos",
+    folder: "/menu",
   });
   return Product.create({
     name,
     price,
+    description,
+    category,
     cloudinary_id: cloudinary_image.public_id,
   })
     .then((product) => {
-      return { name: product.name, price: product.price };
+      return {
+        name: product.name,
+        price: product.price,
+        category: product.category,
+        description: product.description,
+      };
     })
     .catch((err) => {
       if (err instanceof ValidationError) {
@@ -44,7 +51,14 @@ const getProducts = (offset, limit) => {
     order: [["createdAt", "DESC"]],
     offset,
     limit,
-    attributes: ["id", "name", "price", "cloudinary_id"],
+    attributes: [
+      "id",
+      "name",
+      "price",
+      "cloudinary_id",
+      "description",
+      "category",
+    ],
   });
 };
 

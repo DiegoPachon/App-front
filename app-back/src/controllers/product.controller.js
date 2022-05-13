@@ -2,19 +2,23 @@ const { ProductServices } = require("../services");
 
 const createProduct = async (req, res) => {
   try {
-    console.log(req.file);
-    console.log(req.body);
-    const { name, price } = req.body;
+    const { name, price, description, category } = req.body;
     const image = req.file;
 
-    if (!(name && price && image)) {
+    if (!(name && price && image && description && category)) {
       return res.status(400).json({
         ok: false,
         error: "All fields are required",
       });
     }
 
-    const product = await ProductServices.createProduct(name, price, image);
+    const product = await ProductServices.createProduct(
+      name,
+      price,
+      image,
+      category,
+      description
+    );
 
     res.status(201).json({
       ok: true,

@@ -14,6 +14,10 @@ const Product = connection.define(
       allowNull: false,
       unique: true,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     price: {
       type: DataTypes.DOUBLE,
       allowNull: false,
@@ -22,10 +26,10 @@ const Product = connection.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // type: {
-    //   type: DataTypes.ENUM(["Bebida", "Entrada", "Platos"]),
-    //   allowNull: false
-    // },
+    category: {
+      type: DataTypes.ENUM(["Desayunos", "Platos Fuertes", "Bebidas"]),
+      allowNull: false,
+    },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
