@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./login/Login";
 import Header from "./header/index";
-import Menu from "./menu/Menu";
+import Menu from "./menu/index";
 import Usuarios from "./usuarios/Usuarios";
 import Caja from "./caja/Caja";
 import CrearUsuario from "./usuarios/CrearUsuario";

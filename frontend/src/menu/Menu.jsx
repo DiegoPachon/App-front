@@ -3,9 +3,8 @@ import "./index.css";
 
 const Menu = ({ items }) => {
   return (
-    <h2>Menu</h2>
-    /*<div className="section-center">
-      { {items.map((menuItem) => {
+    <div className="section-center">
+      {items.map((menuItem) => {
         const { id, title, img, price, desc } = menuItem;
         return (
           <article key={id} className="menu-item">
@@ -19,8 +18,8 @@ const Menu = ({ items }) => {
             </div>
           </article>
         );
-      })} }
-    </div>*/
+      })}
+    </div>
   );
 };
 
