@@ -7,7 +7,7 @@ const router = express.Router();
 
 router
   .route("/product")
-  .all([/*authMiddleware, */fileMiddleware.single("image")])
+  .all([/*authMiddleware, */ fileMiddleware.single("image")])
   .post(/*authRoles([roles.ADMIN]),*/ ProductController.createProduct)
   .get(/*authRoles(roles.all()),*/ ProductController.getProducts);
 

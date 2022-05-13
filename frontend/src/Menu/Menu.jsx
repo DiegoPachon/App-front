@@ -1,59 +1,26 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Table, Container } from "react-bootstrap";
-import "./Menu.css";
+import React from "react";
+import "./index.css";
 
-const data = [
-  { id: 1, nombre: "Carne asada", precio: "15000" },
-  { id: 2, nombre: "Pechuga a la plancha", precio: "17000" },
-  { id: 3, nombre: "Sopa", precio: "10000" },
-  { id: 4, nombre: "Agua", precio: "5000" },
-  { id: 5, nombre: "Gaseosa", precio: "5000" },
-  { id: 6, nombre: "Cerveza", precio: "10000" },
-];
-
-const Menu = () => {
-  const [platos, setPlatos] = useState(data);
-
+const Menu = ({ items }) => {
   return (
-    <>
-      <Container>
-        <br />
-        <button type="submit" className="btn btn-success">
-          Insertar Producto
-        </button>
-        <br />
-        <Table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Precio</th>
-              <th>Imagen</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {platos.map((elemento) => (
-              <tr key={elemento.id}>
-                <td>{elemento.id}</td>
-                <td>{elemento.nombre}</td>
-                <td>{elemento.precio}</td>
-                <td>{elemento.imagen}</td>
-                <td>
-                  <button type="button" className="btn btn-primary">
-                    Editar
-                  </button>{" "}
-                  <button type="button" className="btn btn-danger">
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
-    </>
+    <h2>Menu</h2>
+    /*<div className="section-center">
+      { {items.map((menuItem) => {
+        const { id, title, img, price, desc } = menuItem;
+        return (
+          <article key={id} className="menu-item">
+            <img src={img} alt={title} className="photo" />
+            <div className="item-info">
+              <header>
+                <h4>{title}</h4>
+                <h4 className="price">N{price}</h4>
+              </header>
+              <p className="item-text">{desc}</p>
+            </div>
+          </article>
+        );
+      })} }
+    </div>*/
   );
 };
 

@@ -7,12 +7,13 @@ const CrearProducto = () => {
   const { handleSubmit, register } = useForm();
 
   const onSubmit = (values) => {
-    console.log(values);
     const formData = new FormData();
     formData.append("image", values.file[0]);
-    formData.append("name", values.name);
     formData.append("price", values.price);
-    const URLBackend = "http://localhost:3001";
+    formData.append("name", values.name);
+
+    console.log(formData);
+    const URLBackend = "http://localhost:3000";
     axios
       .post(`${URLBackend}/product`, formData)
       .then((response) => {
@@ -64,7 +65,12 @@ const CrearProducto = () => {
           </div>
           <div id="Espacio"></div>
           <div className="forma">
-            <input type="file" {...register("file")} />
+            <input
+              type="file"
+              className="imagenes"
+              maxLength={10000000}
+              {...register("file")}
+            />
           </div>
           <div id="Espacio"></div>
           <div className="forma">
