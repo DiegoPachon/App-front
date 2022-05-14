@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+// import { useForm } from "react-hook-form";
+// import { delProducts } from "./productosDel";
+import { getProducts } from "./productosGet";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Container } from "react-bootstrap";
 import "./Menu.css";
 
-const data = [
-  { id: 1, nombre: "Carne asada", precio: "15000" },
-  { id: 2, nombre: "Pechuga a la plancha", precio: "17000" },
-  { id: 3, nombre: "Sopa", precio: "10000" },
-  { id: 4, nombre: "Agua", precio: "5000" },
-  { id: 5, nombre: "Gaseosa", precio: "5000" },
-  { id: 6, nombre: "Cerveza", precio: "10000" },
-];
-
 const Menu = () => {
-  const [platos, setPlatos] = useState(data);
-
   return (
     <>
       <Container>
@@ -34,7 +26,7 @@ const Menu = () => {
             </tr>
           </thead>
           <tbody>
-            {platos.map((elemento) => (
+            {getProducts.map((elemento) => (
               <tr key={elemento.id}>
                 <td>{elemento.id}</td>
                 <td>{elemento.nombre}</td>

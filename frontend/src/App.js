@@ -22,17 +22,17 @@ const App = () => {
           <Route
             path="usuarios"
             element={
-              <ProtectedRoute>
-                <Usuarios />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+              <Usuarios />
+              // </ProtectedRoute>
             }
           />
           <Route
             path="caja"
             element={
-              <ProtectedRoute>
-                <Caja />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+              <Caja />
+              // </ProtectedRoute>
             }
           />
           <Route path="crearusuario" element={<CrearUsuario />} />
