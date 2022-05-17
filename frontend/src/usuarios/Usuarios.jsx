@@ -1,65 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { delUsers } from "./usuariosDel";
+import { getUsers } from "./usuariosGet";
 import { Table, Button, Container } from "react-bootstrap";
 import "./Usuarios.css";
 
-const data = [
-  { id: 1, nombre: "Diego", email: "diego@hotmail.com", contraseña: "123" },
-  {
-    id: 2,
-    nombre: "Sebastian",
-    email: "sebastian@hotmail.com",
-    contraseña: "456",
-  },
-  {
-    id: 3,
-    nombre: "Leonardo",
-    email: "leonardo@hotmail.com",
-    contraseña: "789",
-  },
-];
+// const nombres = [{ id: 1, name: "a", email: "asd@asd.com" }];
+const UsersTable = () => {
+  const [users, setUsers] = useState([]);
+  const URLCrearUsuario = ".http://localhost:3000/crearusuario";
 
-const CreateUserForm = () => {
-  const [users, setUsers] = useState(data);
+  useEffect(() => {
+    async function fetchUsers() {
+      const user = await getUsers();
+      setUsers(user);
+    }
+    fetchUsers();
+  }, []);
+
+  const deleteUser = async (id) => {
+    await delUsers(id);
+    const user = await getUsers();
+    setUsers(user);
+  };
 
   return (
-    <>
-      <Container>
-        <br />
-        <button type="submit" className="btn btn-success">
-          Crear Usuario
-        </button>
-        <br />
-        <Table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Contaseña</th>
-              <th>Acciones</th>
+    <Container>
+      <br />
+      <button
+        type="submit"
+        onClick={() => URLCrearUsuario}
+        className="btn btn-success"
+      >
+        Crear Usuario
+      </button>
+      <br />
+      <Table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((values) => (
+            <tr key={values.id}>
+              <td>{values.name}</td>
+              <td>{values.email}</td>
+              <td>
+                <Button color="primary">Editar</Button>{" "}
+                <button
+                  onClick={() => deleteUser(values.id)}
+                  className="btn btn-danger"
+                >
+                  Eliminar
+                </button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {users.map((elemento) => (
-              <tr key={elemento.id}>
-                <td>{elemento.id}</td>
-                <td>{elemento.nombre}</td>
-                <td>{elemento.email}</td>
-                <td>{elemento.contraseña}</td>
-                <td>
-                  <Button color="primary">Editar</Button>{" "}
-                  <button type="submit" className="btn btn-danger">
-                    Eliminar
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
-    </>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 };
 
-export default CreateUserForm;
+export default UsersTable;
