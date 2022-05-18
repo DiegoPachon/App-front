@@ -1,15 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
+
 import Login from "./login/Login";
 import Header from "./header/index";
-import Menu from "./menu/index";
-import Usuarios from "./usuarios/Usuarios";
 import Caja from "./caja/Caja";
-import CrearUsuario from "./usuarios/CrearUsuario";
-import CrearProducto from "./crearProducto/CrearProducto";
-import AuthProvider from "./auth/AuthProvider";
-import ProtectedRoute from "./auth/ProtectedRoute";
+import { CrearUsuario, ListarUsuarios } from "./usuarios/components";
+import { AuthProvider, ProtectedRoute } from "./auth/components";
+import { Menu, listarProductos, CrearProducto } from "./productos/components";
+
+import "./App.css";
 
 const App = () => {
   return (
@@ -23,7 +22,7 @@ const App = () => {
             path="usuarios"
             element={
               // <ProtectedRoute>
-              <Usuarios />
+              <ListarUsuarios />
               // </ProtectedRoute>
             }
           />
@@ -37,7 +36,6 @@ const App = () => {
           />
           <Route path="crearusuario" element={<CrearUsuario />} />
           <Route path="crearproducto" element={<CrearProducto />} />
-          <Route path="caja" element={<Caja />} />
         </Routes>
       </div>
     </AuthProvider>

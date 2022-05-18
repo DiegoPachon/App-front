@@ -9,7 +9,7 @@ const cld = new Cloudinary({
   },
 });
 
-const Menu = ({ items, category }) => {
+const Products = ({ items, category }) => {
   const [showItems, setShowItems] = useState(items);
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const Menu = ({ items, category }) => {
   );
 };
 
-export default Menu;
+export default Products;

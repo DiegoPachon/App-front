@@ -1,7 +1,7 @@
 import axios from "axios";
+import URLBackend from "../backendPath";
 
 const getProducts = () => {
-  const URLBackend = "http://localhost:3000";
   return axios
     .get(`${URLBackend}/product?offset=0&limit=30`)
     .then((response) => {

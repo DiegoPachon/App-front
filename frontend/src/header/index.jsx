@@ -1,9 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Header.css";
 import { useAuth } from "../auth/Auth";
 import Auth from "./Auth";
-import NoAuth from "./NoAuth";
+
+import "./Header.css";
 
 const Header = () => {
   const { token, onLogout } = useAuth();
@@ -12,11 +11,6 @@ const Header = () => {
       {token && (
         <>
           <Auth onLogout={onLogout} />
-        </>
-      )}
-      {!token && (
-        <>
-          <NoAuth />
         </>
       )}
     </div>

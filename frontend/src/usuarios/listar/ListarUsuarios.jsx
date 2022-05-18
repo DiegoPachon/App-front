@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { delUsers } from "./usuariosDel";
-import { getUsers } from "./usuariosGet";
+import { delUsers, getUsers } from "../requests";
 import { Table, Button, Container } from "react-bootstrap";
-import "./Usuarios.css";
+import "./ListarUsuarios.css";
 
-// const nombres = [{ id: 1, name: "a", email: "asd@asd.com" }];
-const UsersTable = () => {
+const ListarUsuarios = () => {
   const [users, setUsers] = useState([]);
   const URLCrearUsuario = ".http://localhost:3000/crearusuario";
 
@@ -65,4 +63,4 @@ const UsersTable = () => {
   );
 };
 
-export default UsersTable;
+export default ListarUsuarios;

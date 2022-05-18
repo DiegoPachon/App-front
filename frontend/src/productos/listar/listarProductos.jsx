@@ -1,12 +1,10 @@
 import React from "react";
-// import { useForm } from "react-hook-form";
-// import { delProducts } from "./productosDel";
-import { getProducts } from "./productosGet";
+import { getProducts } from "../requests";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Container } from "react-bootstrap";
-import "./Menu.css";
+import "./listarProductos.css";
 
-const Menu = () => {
+const listarProductos = () => {
   return (
     <>
       <Container>
@@ -49,4 +47,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default listarProductos;
