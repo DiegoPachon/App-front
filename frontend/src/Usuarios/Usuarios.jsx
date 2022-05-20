@@ -5,11 +5,8 @@ import { getUsers } from "./usuariosGet";
 import { Table, Button, Container } from "react-bootstrap";
 import "./Usuarios.css";
 
-// const nombres = [{ id: 1, name: "a", email: "asd@asd.com" }];
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
-  const URLCrearUsuario = ".http://localhost:3000/crearusuario";
-
   useEffect(() => {
     async function fetchUsers() {
       const user = await getUsers();
@@ -27,13 +24,12 @@ const UsersTable = () => {
   return (
     <Container>
       <br />
-      <button
-        type="submit"
-        onClick={() => URLCrearUsuario}
+      <Button
+        href="http://localhost:3000/crearusuario"
         className="btn btn-success"
       >
         Crear Usuario
-      </button>
+      </Button>
       <br />
       <Table>
         <thead>

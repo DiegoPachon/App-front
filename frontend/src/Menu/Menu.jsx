@@ -1,24 +1,36 @@
-import React from "react";
-// import { useForm } from "react-hook-form";
-// import { delProducts } from "./productosDel";
+import React, { useState, useEffect } from "react";
+import { delProducts } from "./productosDel";
 import { getProducts } from "./productosGet";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Table, Container } from "react-bootstrap";
+import { Table, Button, Container } from "react-bootstrap";
 import "./Menu.css";
 
-const Menu = () => {
+const ProductTable = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    async function fetchProducts() {
+      const product = await getProducts();
+      setProducts(product);
+    }
+    fetchProducts();
+  }, []);
+
+  const deleteProduct = async (id) => {
+    await delProducts(id);
+    const product = await getProducts();
+    setProducts(product);
+  };
   return (
     <>
       <Container>
         <br />
-        <button type="submit" className="btn btn-success">
+        <Button href="crearproducto" className="btn btn-success">
           Insertar Producto
-        </button>
+        </Button>
         <br />
         <Table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>Nombre</th>
               <th>Precio</th>
               <th>Imagen</th>
@@ -26,17 +38,17 @@ const Menu = () => {
             </tr>
           </thead>
           <tbody>
-            {getProducts.map((elemento) => (
-              <tr key={elemento.id}>
-                <td>{elemento.id}</td>
-                <td>{elemento.nombre}</td>
-                <td>{elemento.precio}</td>
-                <td>{elemento.imagen}</td>
+            {products.map((values) => (
+              <tr key={values.id}>
+                <td>{values.name}</td>
+                <td>{values.price}</td>
+                <td>{values.cloudinary_id}</td>
                 <td>
-                  <button type="button" className="btn btn-primary">
-                    Editar
-                  </button>{" "}
-                  <button type="button" className="btn btn-danger">
+                  <Button color="primary">Editar</Button>{" "}
+                  <button
+                    onClick={() => deleteProduct(values.id)}
+                    className="btn btn-danger"
+                  >
                     Eliminar
                   </button>
                 </td>
@@ -49,4 +61,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default ProductTable;
