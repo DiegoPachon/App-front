@@ -3,40 +3,11 @@ margin: auto;
 margin-top: 10px;
 width: 1500px;
 height: 730px;
-background-color: rgb(7, 4, 4);
+background-color: rgb(254, 251, 251);
 }
 
-div#recibo{
-float: right;
-width: 300px;
-height: 730px;
-background-color:#c2c1c1 ;
-}
 
-div#productos{
-float: none;
-height: 730px;
-background-color:#a92323 ;
-margin-left: auto;
-width: 880px;
-margin-right: auto;
-}
-
-div#botones{
-float: left;
-width: 300px;
-height: 730px;
-background-color:#c2c1c1 ;
-}
-div#Espacio{
+.Espacio{
     width: 300px;
     height: 30px; 
 }
-.btn{
-    border: none;
-    border-radius: 700px;
-    font-size: 20px;
-    line-height: 48px;
-    padding: 0 16px;
-    width: 300px;
-    }

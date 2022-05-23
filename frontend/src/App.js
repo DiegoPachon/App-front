@@ -9,7 +9,8 @@ import Caja from "./caja/Caja";
 import CrearUsuario from "./usuarios/CrearUsuario";
 import CrearProducto from "./menu/CrearProducto";
 import AuthProvider from "./Auth/AuthProvider";
-import ProtectedRoute from "./Auth/ProtectedRoute";
+// import ProtectedRoute from "./Auth/ProtectedRoute";
+import { CarProvider } from "./caja/carContext";
 
 const App = () => {
   return (
@@ -31,7 +32,9 @@ const App = () => {
             path="caja"
             element={
               // <ProtectedRoute>
-              <Caja />
+              <CarProvider>
+                <Caja />
+              </CarProvider>
               // </ProtectedRoute>
             }
           />
