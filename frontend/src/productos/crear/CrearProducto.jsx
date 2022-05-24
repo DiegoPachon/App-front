@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import URLBackend from "../../backendPath";
 import "./CrearProducto.css";
 
 const CrearProducto = () => {
@@ -12,9 +13,10 @@ const CrearProducto = () => {
     formData.append("image", values.file[0]);
     formData.append("price", values.price);
     formData.append("name", values.name);
+    formData.append("description", values.description);
+    formData.append("category", "Desayunos");
 
     console.log(formData);
-    const URLBackend = "http://localhost:3000";
     axios
       .post(`${URLBackend}/product`, formData)
       .then((response) => {
@@ -60,6 +62,16 @@ const CrearProducto = () => {
               id=""
               placeholder="Precio"
               {...register("price", {
+                required: "Required",
+              })}
+            />
+            <div id="Espacio"></div>
+            <input
+              type="text"
+              className="form-control form-control-lgl"
+              id=""
+              placeholder="Descripción"
+              {...register("description", {
                 required: "Required",
               })}
             />

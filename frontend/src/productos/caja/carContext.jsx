@@ -14,6 +14,7 @@ export const CarProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("carProducts", JSON.stringify(carItems));
+    console.log(carItems);
   }, [carItems]);
 
   const addItemToCar = (product) => {
