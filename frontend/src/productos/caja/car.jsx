@@ -1,40 +1,37 @@
 import { useContext, useEffect, useState } from "react";
-import { ItemCart } from "../ItemCart";
-import CartContext from "./carContext";
+import { ItemCar } from "./itemCar";
+import { carContext } from "./carContext";
 import "./car.css";
 
-const Cart = () => {
+const Car = () => {
   /* Creamos 2 estados, uno para ver si el carrito esta abierto o no 
   y otro para obtener la cantidad de productos que tenemos en el carrito */
-  const [cartOpen, setCartOpen] = useState(false);
+  const [carOpen, setCarOpen] = useState(false);
   const [productsLength, setProductsLength] = useState(0);
 
   /* Traemos del context los productos del carrito */
-  const { cartItems } = useContext(CartContext);
+  const { carItems } = useContext(carContext);
 
   /* Cada vez que se modifica el carrito, actualizamos la cantidad de productos */
   useEffect(() => {
     setProductsLength(
-      cartItems?.reduce((previous, current) => previous + current.amount, 0)
+      carItems?.reduce((previous, current) => previous + current.amount, 0)
     );
-  }, [cartItems]);
+  }, [carItems]);
 
   /* Obtenemos el precio total */
-  const total = cartItems?.reduce(
+  const total = carItems?.reduce(
     (previous, current) => previous + current.amount * current.price,
     0
   );
 
   return (
-    <div className={styles.cartContainer}>
-      <div
-        onClick={() => setCartOpen(!cartOpen)}
-        className={styles.buttonCartContainer}
-      >
-        <div className={styles.buttonCart}>
-          {!cartOpen ? (
+    <div className="cartContainer">
+      <div onClick={() => setCarOpen(!carOpen)} className="buttonCartContainer">
+        <div className="buttonCart">
+          {!carOpen ? (
             <svg
-              className={styles.open}
+              className="open"
               width={"35px"}
               viewBox="0 0 30 27"
               fill="none"
@@ -68,30 +65,28 @@ const Cart = () => {
             </svg>
           )}
         </div>
-        {!cartOpen && (
-          <div className={styles.productsNumber}>{productsLength}</div>
-        )}
+        {!carOpen && <div className="productsNumber">{productsLength}</div>}
       </div>
 
-      {cartItems && cartOpen && (
-        <div className={styles.cart}>
+      {carItems && carOpen && (
+        <div className="cart">
           <h2>Tu carrito</h2>
 
-          {cartItems.length === 0 ? (
-            <p className={styles.cartVacio}>Tu carrito esta vacio</p>
+          {carItems.length === 0 ? (
+            <p className="cartVacio">Tu carrito esta vacio</p>
           ) : (
-            <div className={styles.productsContainer}>
-              {cartItems.map((item, i) => (
-                <ItemCart key={i} item={item} />
+            <div className="productsContainer">
+              {carItems.map((item, i) => (
+                <ItemCar key={i} item={item} />
               ))}
             </div>
           )}
 
-          <h2 className={styles.total}>Total: ${total}</h2>
+          <h2 className="total">Total: ${total}</h2>
         </div>
       )}
     </div>
   );
 };
 
-export default Cart;
+export default Car;

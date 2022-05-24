@@ -4,14 +4,14 @@
     display: flex;
     justify-content: flex-end;
     font-family: Roboto;
-  
+}
     .buttonCartContainer {
       position: absolute;
       margin-top: 10px;
       margin-right: 20px;
       cursor: pointer;
       z-index: 2;
-  
+    }
       svg {
         height: 25px;
         margin-right: 2px;
@@ -41,7 +41,6 @@
         align-items: center;
         justify-content: center;
       }
-    }
   
     .cart {
       position: absolute;
@@ -51,7 +50,7 @@
       width: 400px;
       background-color: #222222;
       color: white;
-  
+    }
       h2 {
         text-align: center;
         font-weight: bold;
@@ -76,8 +75,8 @@
         overflow-y: scroll;
         margin-top: 5px;
       }
-    }
-  }
+
+  
   
   ::-webkit-scrollbar {
     -webkit-appearance: none;

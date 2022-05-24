@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
+import "boxicons";
 import Login from "./login/Login";
 import Header from "./header/index";
 import { CrearUsuario, ListarUsuarios } from "./usuarios/components";
@@ -10,7 +10,7 @@ import {
   ListarProductos,
   CrearProducto,
   Caja,
-  CarProvider,
+  CarProvider
 } from "./productos/components";
 import "./App.css";
 

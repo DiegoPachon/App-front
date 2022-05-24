@@ -45,9 +45,6 @@ const ListarProductos = () => {
                 <td>{elemento.category}</td>
                 <td>{elemento.description}</td>
                 <td>
-                  <button type="button" className="btn btn-primary">
-                    Editar
-                  </button>{" "}
                   <button type="button" className="btn btn-danger">
                     Eliminar
                   </button>

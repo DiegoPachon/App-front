@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
 import "./Header.css";
+// import Car from "../productos/caja/car";
 
 const Auth = ({ onLogout }) => {
   return (
@@ -33,6 +34,11 @@ const Auth = ({ onLogout }) => {
             Sign Out
           </Button>
         </div>
+        <div id="Espacio"></div>
+        {/* <div>
+          {" "}
+          <Car></Car>
+        </div> */}
       </main>
     </div>
   );
