@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import "./CrearUsuario.css";
@@ -30,12 +31,9 @@ const CrearUsuario = () => {
 
   return (
     <div className="CrearUsuario">
-      <Button
-        href="http://localhost:3000/usuarios"
-        className="btn btn-secondary"
-      >
-        Volver a ususarios
-      </Button>
+      <NavLink to="../usuarios">
+        <Button className="btn btn-secondary">Volver a ususarios</Button>
+      </NavLink>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>
           <div className="title">Nuevo Usuario</div>

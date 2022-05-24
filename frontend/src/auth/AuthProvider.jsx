@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
       const { user } = response;
       setToken(user.token);
 
-      const origin = location.state?.from?.pathname || "/menu";
+      const origin = location.state?.from?.pathname || "/";
       navigate(origin);
     }
   };

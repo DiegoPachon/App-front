@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { delUsers, getUsers } from "../requests";
 import { Table, Button, Container } from "react-bootstrap";
@@ -23,12 +24,9 @@ const ListarUsuarios = () => {
   return (
     <Container>
       <br />
-      <Button
-        href="http://localhost:3000/crearusuario"
-        className="btn btn-success"
-      >
-        Crear Usuario
-      </Button>
+      <NavLink to="../crearusuario">
+        <Button className="btn btn-success">Crear Usuario</Button>
+      </NavLink>
       <br />
       <Table>
         <thead>
@@ -44,7 +42,6 @@ const ListarUsuarios = () => {
               <td>{values.name}</td>
               <td>{values.email}</td>
               <td>
-                <Button color="primary">Editar</Button>{" "}
                 <button
                   onClick={() => deleteUser(values.id)}
                   className="btn btn-danger"

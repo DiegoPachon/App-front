@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import URLBackend from "../../backendPath";
@@ -30,9 +31,9 @@ const CrearProducto = () => {
 
   return (
     <div className="CrearProducto">
-      <Button href="http://localhost:3000/menu" className="btn btn-secondary">
-        Volver a menu
-      </Button>
+      <NavLink to="../menu">
+        <Button className="btn btn-secondary">Volver a menu</Button>
+      </NavLink>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>
           <div className="title">Nuevo Producto</div>

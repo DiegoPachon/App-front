@@ -1,14 +1,13 @@
 import { React, useEffect, useState, Fragment, useContext } from "react";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import { useAuth } from "../../auth/Auth";
 import { getProducts } from "../requests";
 import { thumbnail } from "@cloudinary/url-gen/actions/resize";
 import { carContext } from "./carContext";
+import { cloudinary_name } from "../../backendPath";
 import "./Caja.css";
 
 const Caja = () => {
-  const { token } = useAuth();
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
@@ -21,11 +20,11 @@ const Caja = () => {
   }, []);
   const cld = new Cloudinary({
     cloud: {
-      cloudName: "djlpt2ubq",
+      cloudName: cloudinary_name,
     },
   });
 
-  const { addItemToCar } = useContext(carContext);
+  const { addItemToCar, carItems } = useContext(carContext);
   return (
     <div className="Caja">
       <section className="menu section">

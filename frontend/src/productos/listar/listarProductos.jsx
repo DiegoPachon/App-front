@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { getProducts } from "../requests";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Container } from "react-bootstrap";
@@ -9,9 +10,12 @@ const listarProductos = () => {
     <>
       <Container>
         <br />
-        <button type="submit" className="btn btn-success">
-          Insertar Producto
-        </button>
+        <NavLink to="../crearproducto">
+          <button type="submit" className="btn btn-success">
+            Insertar Producto
+          </button>
+        </NavLink>
+
         <br />
         <Table>
           <thead>

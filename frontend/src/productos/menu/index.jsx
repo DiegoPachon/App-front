@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 
 import Categories from "./Categories";
 import Products from "./Products";
@@ -23,17 +22,6 @@ const MenuGeneral = () => {
 
   return (
     <>
-      <main>
-        <div className="title">
-          <h2>Our menu</h2>
-          <div className="underline"></div>
-        </div>
-        <div className="login-btn">
-          <NavLink to="login">
-            <button type="button">Log in</button>
-          </NavLink>
-        </div>
-      </main>
       <section className="menu section">
         <Categories categories={categories} filterItems={setCategorySelected} />
         <Products items={menuItems} category={categorySelected} />

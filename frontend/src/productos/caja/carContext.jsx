@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-// import { getProducts } from "../menu/productosGet";
 export const carContext = createContext();
 
 export const CarProvider = ({ children }) => {

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
+import { cloudinary_name } from "../../backendPath";
 import "./index.css";
 
 const cld = new Cloudinary({
   cloud: {
-    cloudName: "djlpt2ubq",
+    cloudName: cloudinary_name,
   },
 });
 
