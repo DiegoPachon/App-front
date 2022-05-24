@@ -6,6 +6,7 @@ import { getProducts } from "../menu/productosGet";
 import "./Caja.css";
 import { thumbnail } from "@cloudinary/url-gen/actions/resize";
 import { carContext } from "./carContext";
+
 const Caja = () => {
   const { token } = useAuth();
   const [products, setProducts] = useState([]);
