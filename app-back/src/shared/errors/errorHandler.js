@@ -9,7 +9,6 @@ class ErrorHandler extends Error {
 }
 
 const handleError = (err, res) => {
-  console.log(err);
   let { code, message, error, stack } = err;
 
   if (!code || code < 100 || code >= 600) {

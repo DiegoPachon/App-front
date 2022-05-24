@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { getProducts } from "../requests";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Table, Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./listarProductos.css";
 
-const listarProductos = () => {
+const ListarProductos = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const productsDB = await getProducts();
+      setProducts(productsDB);
+    }
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <Container>
@@ -20,20 +30,20 @@ const listarProductos = () => {
         <Table>
           <thead>
             <tr>
-              <th>Id</th>
               <th>Nombre</th>
               <th>Precio</th>
-              <th>Imagen</th>
+              <th>Categoria</th>
+              <th>Descripcion</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {getProducts.map((elemento) => (
+            {products.map((elemento) => (
               <tr key={elemento.id}>
-                <td>{elemento.id}</td>
-                <td>{elemento.nombre}</td>
-                <td>{elemento.precio}</td>
-                <td>{elemento.imagen}</td>
+                <td>{elemento.name}</td>
+                <td>{elemento.price}</td>
+                <td>{elemento.category}</td>
+                <td>{elemento.description}</td>
                 <td>
                   <button type="button" className="btn btn-primary">
                     Editar
@@ -51,4 +61,4 @@ const listarProductos = () => {
   );
 };
 
-export default listarProductos;
+export default ListarProductos;

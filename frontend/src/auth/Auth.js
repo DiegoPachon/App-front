@@ -9,7 +9,6 @@ const Authentication = (email, password) => {
       password,
     })
     .then((response) => {
-      console.log(response);
       return response.data;
     })
     .catch((response) => {

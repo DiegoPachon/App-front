@@ -7,7 +7,7 @@ import { CrearUsuario, ListarUsuarios } from "./usuarios/components";
 import { AuthProvider, ProtectedRoute } from "./auth/components";
 import {
   Menu,
-  listarProductos,
+  ListarProductos,
   CrearProducto,
   Caja,
   CarProvider,
@@ -40,6 +40,7 @@ const App = () => {
               // </ProtectedRoute>
             }
           />
+          <Route path="productos" element={<ListarProductos />} />
           <Route path="crearusuario" element={<CrearUsuario />} />
           <Route path="crearproducto" element={<CrearProducto />} />
         </Routes>

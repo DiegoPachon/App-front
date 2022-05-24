@@ -16,7 +16,6 @@ const deleteProducts = (id) => {
   return axios
     .delete(`${URLBackend}/product/${id}`)
     .then((response) => {
-      console.log(response);
       return response.data;
     })
     .catch((res) => {

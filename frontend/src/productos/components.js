@@ -1,7 +1,7 @@
 import Menu from "./menu/index";
-import listarProductos from "./listar/listarProductos";
+import ListarProductos from "./listar/ListarProductos";
 import CrearProducto from "./crear/CrearProducto";
 import Caja from "./caja/Caja";
 import { CarProvider } from "./caja/carContext";
 
-export { Menu, listarProductos, CrearProducto, Caja, CarProvider };
+export { Menu, ListarProductos, CrearProducto, Caja, CarProvider };

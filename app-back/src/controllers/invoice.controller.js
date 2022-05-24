@@ -1,7 +1,6 @@
 const { InvoiceServices } = require("../services");
 
 const createInvoice = async (req, res) => {
-  console.log(req.body);
   try {
     const { total, tip, products } = req.body;
 
@@ -54,7 +53,7 @@ const deleteInvoice = async (req, res) => {
   try {
     const { invoiceId } = req.params;
 
-    const invoice = await InvoiceServices.deleteInvoice(invoiceId)
+    const invoice = await InvoiceServices.deleteInvoice(invoiceId);
 
     res.status(200).json({
       ok: true,

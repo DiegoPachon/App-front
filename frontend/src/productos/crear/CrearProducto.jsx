@@ -17,12 +17,10 @@ const CrearProducto = () => {
     formData.append("description", values.description);
     formData.append("category", "Desayunos");
 
-    console.log(formData);
     axios
       .post(`${URLBackend}/product`, formData)
       .then((response) => {
         console.log(response);
-        console.log(values);
       })
       .catch((res) => {
         console.log(res.response.data);
@@ -31,8 +29,8 @@ const CrearProducto = () => {
 
   return (
     <div className="CrearProducto">
-      <NavLink to="../menu">
-        <Button className="btn btn-secondary">Volver a menu</Button>
+      <NavLink to="/productos">
+        <Button className="btn btn-secondary">Volver a productos</Button>
       </NavLink>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>

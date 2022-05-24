@@ -22,6 +22,13 @@ const Auth = ({ onLogout }) => {
             <h5>CAJA</h5>
             <h4>CAJA</h4>
           </NavLink>
+          <div className="box">
+            <NavLink to="productos" className="box">
+              <i className="lni lni-apple"></i>
+              <h5>PRODUCTOS</h5>
+              <h4>PRODUCTOS</h4>
+            </NavLink>
+          </div>
           <Button variant="contained" onClick={onLogout}>
             Sign Out
           </Button>

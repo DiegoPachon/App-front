@@ -31,8 +31,8 @@ const CrearUsuario = () => {
 
   return (
     <div className="CrearUsuario">
-      <NavLink to="../usuarios">
-        <Button className="btn btn-secondary">Volver a ususarios</Button>
+      <NavLink to="/usuarios">
+        <Button className="btn btn-secondary">Volver a usuarios</Button>
       </NavLink>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>

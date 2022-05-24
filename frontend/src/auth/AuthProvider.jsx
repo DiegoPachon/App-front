@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Authentication, AuthContext } from "./Auth";
 
@@ -8,10 +8,16 @@ const AuthProvider = ({ children }) => {
 
   const [token, setToken] = useState(null);
 
+  useEffect(() => {
+    const authToken = localStorage.getItem("authToken");
+    setToken(authToken ? authToken : null);
+  }, []);
+
   const handleLogin = async (values) => {
     const response = await Authentication(values.email, values.password);
     if (!response.error) {
       const { user } = response;
+      localStorage.setItem("authToken", user.token);
       setToken(user.token);
 
       const origin = location.state?.from?.pathname || "/";
