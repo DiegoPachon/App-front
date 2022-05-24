@@ -21,7 +21,7 @@ const Caja = () => {
   }, []);
   const cld = new Cloudinary({
     cloud: {
-      cloudName: "dynkblhi3",
+      cloudName: "djlpt2ubq",
     },
   });
 

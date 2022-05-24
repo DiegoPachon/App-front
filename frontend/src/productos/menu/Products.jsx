@@ -5,7 +5,7 @@ import "./index.css";
 
 const cld = new Cloudinary({
   cloud: {
-    cloudName: "dynkblhi3",
+    cloudName: "djlpt2ubq",
   },
 });
 
