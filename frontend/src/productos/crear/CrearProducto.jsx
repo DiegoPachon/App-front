@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Button } from "react-bootstrap";
 import axios from "axios";
 import "./CrearProducto.css";
 
@@ -27,9 +28,9 @@ const CrearProducto = () => {
 
   return (
     <div className="CrearProducto">
-      <button type="submit" className="btn btn-secondary">
+      <Button href="http://localhost:3000/menu" className="btn btn-secondary">
         Volver a menu
-      </button>
+      </Button>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>
           <div className="title">Nuevo Producto</div>

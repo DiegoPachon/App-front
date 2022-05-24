@@ -1,0 +1,13 @@
+.Caja{
+margin: auto;
+margin-top: 10px;
+width: 1500px;
+height: 730px;
+background-color: rgb(254, 251, 251);
+}
+
+
+.Espacio{
+    width: 300px;
+    height: 30px; 
+}

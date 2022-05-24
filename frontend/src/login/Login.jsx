@@ -2,10 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../auth/Auth";
 import "./Login.css";
-
 const Login = () => {
   const { onLogin } = useAuth();
-
   const {
     handleSubmit,
     register,
@@ -15,6 +13,7 @@ const Login = () => {
   return (
     <div className="Login">
       <title className="Title">Bienvenido</title>
+      <img src="../recursos/logo.png" alt="" />
       <h1 className="Description">Lo mejor de la sasón, está en el sabor</h1>
       <div className="Cajas">
         <form className="Form" onSubmit={handleSubmit(onLogin)}>
@@ -50,7 +49,7 @@ const Login = () => {
           />
           <hr /> {errors.username && errors.username.message}
           <button type="submit" className="btn btn-success">
-            Submit
+            Iniciar Sesión
           </button>
         </form>
       </div>

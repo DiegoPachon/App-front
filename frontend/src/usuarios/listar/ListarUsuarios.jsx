@@ -6,8 +6,6 @@ import "./ListarUsuarios.css";
 
 const ListarUsuarios = () => {
   const [users, setUsers] = useState([]);
-  const URLCrearUsuario = ".http://localhost:3000/crearusuario";
-
   useEffect(() => {
     async function fetchUsers() {
       const user = await getUsers();
@@ -25,13 +23,12 @@ const ListarUsuarios = () => {
   return (
     <Container>
       <br />
-      <button
-        type="submit"
-        onClick={() => URLCrearUsuario}
+      <Button
+        href="http://localhost:3000/crearusuario"
         className="btn btn-success"
       >
         Crear Usuario
-      </button>
+      </Button>
       <br />
       <Table>
         <thead>

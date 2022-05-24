@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
@@ -29,9 +30,12 @@ const CrearUsuario = () => {
 
   return (
     <div className="CrearUsuario">
-      <button type="submit" className="btn btn-secondary">
+      <Button
+        href="http://localhost:3000/usuarios"
+        className="btn btn-secondary"
+      >
         Volver a ususarios
-      </button>
+      </Button>
       <div className="caja">
         <form className="Form" onSubmit={handleSubmit(onSubmit)}>
           <div className="title">Nuevo Usuario</div>

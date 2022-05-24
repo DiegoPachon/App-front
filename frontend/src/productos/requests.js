@@ -12,4 +12,17 @@ const getProducts = () => {
     });
 };
 
-export { getProducts };
+const deleteProducts = (id) => {
+  return axios
+    .delete(`${URLBackend}/product/${id}`)
+    .then((response) => {
+      console.log(response);
+      return response.data;
+    })
+    .catch((res) => {
+      console.log(res);
+      return res.data;
+    });
+};
+
+export { getProducts, deleteProducts };

@@ -3,11 +3,15 @@ import { Routes, Route } from "react-router-dom";
 
 import Login from "./login/Login";
 import Header from "./header/index";
-import Caja from "./caja/Caja";
 import { CrearUsuario, ListarUsuarios } from "./usuarios/components";
 import { AuthProvider, ProtectedRoute } from "./auth/components";
-import { Menu, listarProductos, CrearProducto } from "./productos/components";
-
+import {
+  Menu,
+  listarProductos,
+  CrearProducto,
+  Caja,
+  CarProvider,
+} from "./productos/components";
 import "./App.css";
 
 const App = () => {
@@ -30,7 +34,9 @@ const App = () => {
             path="caja"
             element={
               // <ProtectedRoute>
-              <Caja />
+              <CarProvider>
+                <Caja />
+              </CarProvider>
               // </ProtectedRoute>
             }
           />
