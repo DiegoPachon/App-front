@@ -8,6 +8,13 @@ import { cloudinary_name } from "../../backendPath";
 import "./Caja.css";
 
 const Caja = () => {
+  const value = useContext(carContext);
+  const [carOpen, setCarOpen] = value.menu;
+  const [carItems] = value.carItems;
+
+  const tooglemenu = () => {
+    setCarOpen(!carOpen);
+  };
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
@@ -27,6 +34,14 @@ const Caja = () => {
   const { addItemToCar } = useContext(carContext);
   return (
     <section className="menu section">
+      <link
+        href="https://cdn.lineicons.com/3.0/lineicons.css"
+        rel="stylesheet"
+      ></link>
+      <div className="cart" onClick={tooglemenu}>
+        <i className="lni lni-cart"></i>
+        <span className="cantidad">{carItems.length}</span>
+      </div>
       <div className="section-center">
         {products.map((menuItem) => {
           const { id, name, cloudinary_id } = menuItem;
@@ -46,7 +61,7 @@ const Caja = () => {
                     onClick={() => addItemToCar(menuItem)}
                     className="btn-sm btn-outline-info "
                   >
-                    Agregar
+                    Agregar al carrito
                   </button>
                 </header>
               </div>

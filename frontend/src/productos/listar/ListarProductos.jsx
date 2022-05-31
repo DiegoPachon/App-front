@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { getProducts } from "../requests";
+import { getProducts, deleteProducts } from "../requests";
 import { Table, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./listarProductos.css";
@@ -16,6 +16,11 @@ const ListarProductos = () => {
     fetchProducts();
   }, []);
 
+  const deleteProduct = async (id) => {
+    await deleteProducts(id);
+    const product = await getProducts();
+    setProducts(product);
+  };
   return (
     <>
       <Container>
@@ -45,7 +50,11 @@ const ListarProductos = () => {
                 <td>{elemento.category}</td>
                 <td>{elemento.description}</td>
                 <td>
-                  <button type="button" className="btn btn-danger">
+                  <button
+                    onClick={() => deleteProduct(elemento.id)}
+                    type="button"
+                    className="btn btn-danger"
+                  >
                     Eliminar
                   </button>
                 </td>

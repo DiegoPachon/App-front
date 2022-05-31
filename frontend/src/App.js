@@ -10,7 +10,8 @@ import {
   ListarProductos,
   CrearProducto,
   Caja,
-  CarProvider
+  Carrito,
+  CarProvider,
 } from "./productos/components";
 import "./App.css";
 
@@ -35,6 +36,7 @@ const App = () => {
             element={
               // <ProtectedRoute>
               <CarProvider>
+                <Carrito />
                 <Caja />
               </CarProvider>
               // </ProtectedRoute>

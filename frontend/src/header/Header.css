@@ -14,7 +14,7 @@ main {
 .Container_Box {
     max-width: 1100px;
     margin: auto;
-    margin-top: 40px0;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

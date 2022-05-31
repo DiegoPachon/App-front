@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 export const carContext = createContext();
 
 export const CarProvider = ({ children }) => {
+  const [carOpen, setCarOpen] = useState(false);
   const [carItems, setCarItems] = useState(() => {
     try {
       const productsInCar = localStorage.getItem("cartProduct");
@@ -10,10 +11,8 @@ export const CarProvider = ({ children }) => {
       return [];
     }
   });
-
   useEffect(() => {
-    localStorage.setItem("carProducts", JSON.stringify(carItems));
-    console.log(carItems);
+    localStorage.setItem("carProduct", JSON.stringify(carItems));
   }, [carItems]);
 
   const addItemToCar = (product) => {
@@ -42,15 +41,24 @@ export const CarProvider = ({ children }) => {
         carItems.filter((ProductInCar) => ProductInCar.id === menuItem.id)
       );
     } else {
-      setCarItems((ProductInCar) => {
-        if (ProductInCar.id === menuItem.id) {
-          return { ...inCar, amount: inCar.amount - 1 };
-        } else return ProductInCar;
-      });
+      setCarItems(
+        carItems.map((ProductInCar) => {
+          if (ProductInCar.id === menuItem.id) {
+            return { ...inCar, amount: inCar.amount - 1 };
+          } else return ProductInCar;
+        })
+      );
     }
   };
   return (
-    <carContext.Provider value={{ carItems, addItemToCar, deleteItemToCar }}>
+    <carContext.Provider
+      value={{
+        addItemToCar: addItemToCar,
+        deleteItemToCar,
+        menu: [carOpen, setCarOpen],
+        carItems: [carItems, setCarItems],
+      }}
+    >
       {children}
     </carContext.Provider>
   );
